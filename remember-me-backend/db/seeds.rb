@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+ThingRelationship.destroy_all
+Thing.destroy_all
+
 cars = Thing.create(name: 'Cars', content: 'Never buy a car that is less than 3 years old.')
 civic = Thing.create(name: 'Blue Civic', content: 'My lovely 91 civic - such a moneypit')
 
