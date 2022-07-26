@@ -1,0 +1,2 @@
+class ThingRelationship < ApplicationRecord
+end

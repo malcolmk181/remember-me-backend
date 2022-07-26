@@ -1,0 +1,2 @@
+class ThingRelationshipsController < ApplicationController
+end
