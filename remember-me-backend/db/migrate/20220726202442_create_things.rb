@@ -5,7 +5,7 @@ class CreateThings < ActiveRecord::Migration[7.0]
       t.string :content
       t.string :url
       t.string :image_url
-      t.boolean :is_favorite
+      t.boolean :is_favorite, default: false
 
       t.timestamps
     end

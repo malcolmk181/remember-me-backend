@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_26_202553) do
     t.string "content"
     t.string "url"
     t.string "image_url"
-    t.boolean "is_favorite"
+    t.boolean "is_favorite", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
