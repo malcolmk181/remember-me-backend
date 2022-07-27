@@ -1,2 +1,2 @@
-remember-me-backend/log/*.log
-remember-me-backend/tmp/
+log/*.log
+tmp/
