@@ -9,8 +9,13 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins "*"
 
-    resource "remember-me.surge.sh",
+    resource '*',
       headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      methods: [:get]
+
+    resource "*",
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      if: proc {|env| env['HTTP_HOST'] == 'remember-me.surge.sh'}
   end
 end
