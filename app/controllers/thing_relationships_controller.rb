@@ -1,4 +1,6 @@
 class ThingRelationshipsController < ApplicationController
+    deserializable_resource :thing_relationship
+
     def index
         render jsonapi: ThingRelationship.all
     end
