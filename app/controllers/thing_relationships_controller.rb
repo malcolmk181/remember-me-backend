@@ -1,18 +1,18 @@
 class ThingRelationshipsController < ApplicationController
     def index
-        render json: ThingRelationship.all
+        render jsonapi: ThingRelationship.all
     end
 
     def show
-        render json: ThingRelationship.find(params[:id])
+        render jsonapi: ThingRelationship.find(params[:id])
     end
 
     def create
         thing_relationship = ThingRelationship.new(thing_relationship_params)
         if thing_relationship.save
-            render json: thing_relationship
+            render jsonapi: thing_relationship
         else
-            render json: thing_relationship.errors.full_messages, status: :unprocessable_entity
+            render jsonapi_errors: thing_relationship.errors.full_messages
         end
     end
 

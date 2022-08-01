@@ -1,27 +1,27 @@
 class ThingsController < ApplicationController
     def index
-        render json: Thing.all
+        render jsonapi: Thing.all, include: [:child_things]
     end
 
     def show
-        render json: Thing.find(params[:id])
+        render jsonapi: Thing.find(params[:id])
     end
 
     def create
         thing = Thing.new(thing_params)
         if thing.save
-            render json: thing
+            render jsonapi: thing
         else
-            render json: thing.errors.full_messages, status: :unprocessable_entity
+            render jsonapi_errors: thing.errors.full_messages
         end
     end
 
     def update
         thing = Thing.find(params[:id])
         if thing.update(thing_params)
-            render json: thing
+            render jsonapi: thing
         else
-            render json: thing.errors.full_messages, status: :unprocessable_entity
+            render jsonapi_errors: thing.errors.full_messages
         end
     end
 
