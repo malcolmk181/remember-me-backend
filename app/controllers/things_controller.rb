@@ -1,6 +1,4 @@
 class ThingsController < ApplicationController
-    deserializable_resource :thing
-
     def index
         render jsonapi: Thing.all, include: [:child_things]
     end
