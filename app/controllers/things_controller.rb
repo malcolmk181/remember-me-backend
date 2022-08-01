@@ -4,7 +4,7 @@ class ThingsController < ApplicationController
     end
 
     def show
-        render jsonapi: Thing.find(params[:id]), include: [:child_things]
+        render jsonapi: Thing.find(params[:id])
     end
 
     def create
