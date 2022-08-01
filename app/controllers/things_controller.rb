@@ -1,6 +1,6 @@
 class ThingsController < ApplicationController
     def index
-        render jsonapi: Thing.all, include: [:child_things]
+        render jsonapi: Thing.all
     end
 
     def show
